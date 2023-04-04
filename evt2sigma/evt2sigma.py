@@ -37,7 +37,7 @@ author: %%%author%%%
 logsource:
     %%%logsource%%%
 detection:
-    selection: %%%selection%%%
+    selection:%%%selection%%%
     condition: selection
 falsepositives:
     - Unknown
@@ -71,7 +71,7 @@ def generate_sigma(kvs, args):
     rule = rule.replace('%%%date%%%', datetime.datetime.today().strftime('%Y-%m-%d'))
     logsource = "product: %s" % args.p
     if args.s:
-        logsource += "\n\tservice: %s" % args.s
+        logsource += "\n    service: %s" % args.s
     if args.c:
         logsource = "category: %s" % args.c
     rule = rule.replace('%%%logsource%%%', logsource)
@@ -82,9 +82,9 @@ def generate_sigma(kvs, args):
     for k, v in kvs.items():
         # Integer
         if v.isdigit():
-            selection_element = "\n\t%s: %s" % (k, v)
+            selection_element = "\n        %s: %s" % (k, v)
         else:
-            selection_element = "\n\t%s: '%s'" % (k, v)
+            selection_element = "\n        %s: '%s'" % (k, v)
         selection += selection_element
 
     rule = rule.replace('%%%selection%%%', selection)
