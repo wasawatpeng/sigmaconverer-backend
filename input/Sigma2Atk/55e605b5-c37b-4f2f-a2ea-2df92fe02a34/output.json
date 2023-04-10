@@ -1,0 +1,1 @@
+{"domain": "mitre-enterprise", "name": "Sigma rules heatmap", "gradient": {"colors": ["#ffffff", "#ff6666"], "maxValue": 1, "minValue": 0}, "versions": {"navigator": "4.0", "layer": "4.0"}, "techniques": [{"techniqueID": "T1218", "score": 1, "comment": "55e605b5-c37b-4f2f-a2ea-2df92fe02a34.yml"}]}

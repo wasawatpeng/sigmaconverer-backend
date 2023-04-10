@@ -1,0 +1,20 @@
+title: 
+status: experimental
+description: ''
+date: 2023-04-10
+references:
+    - Internal Research
+author: 
+logsource:
+    product: windows
+detection:
+    selection:
+        CommandLine: 'C:\Windows\system32\AUDIODG.EXE 0x7c'
+        EventID: 4688
+        NewProcessName: 'C:\Windows\System32\audiodg.exe'
+        TokenElevationType: '%%1936'
+        SubjectUserSid: 'S-1-5-19'
+    condition: selection
+falsepositives:
+    - Unknown
+level: 

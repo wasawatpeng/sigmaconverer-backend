@@ -1,0 +1,20 @@
+title: Test
+status: experimental
+description: 'Test'
+date: 2023-02-28
+references:
+    - Internal Research
+author: Wasawat
+logsource:
+    product: windows
+detection:
+    selection: 
+	CommandLine: 'C:\Windows\system32\GWX\GWXConfigManager.exe /RefreshConfig'
+	EventID: 4688
+	NewProcessName: 'C:\Windows\System32\GWX\GWXConfigManager.exe'
+	TokenElevationType: '%%1936'
+	SubjectUserSid: 'S-1-5-18'
+    condition: selection
+falsepositives:
+    - Unknown
+level: low

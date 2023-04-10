@@ -1,0 +1,17 @@
+title: 
+status: experimental
+description: ''
+date: 2023-04-05
+references:
+    - Internal Research
+author: 
+logsource:
+    product: windows
+detection:
+    selection:
+        to: '2.3.4.5:1358'
+        proto: 'TCP'
+    condition: selection
+falsepositives:
+    - Unknown
+level: 

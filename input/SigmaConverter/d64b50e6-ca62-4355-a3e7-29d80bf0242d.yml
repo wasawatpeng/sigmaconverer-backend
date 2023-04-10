@@ -1,0 +1,20 @@
+title: WCE Install
+status: experimental
+description: 'Detect an installation of a password dumper service'
+date: 2023-02-28
+references:
+    - Internal Research
+author: Florian Roth
+logsource:
+    product: windows
+detection:
+    selection:
+        EventID: 7045
+        ImagePath: 'C:\temp\wce\wce.exe -S'
+        ServiceName: 'WCESERVICE'
+        ServiceType: 'user mode service'
+        StartType: 'demand start'
+    condition: selection
+falsepositives:
+    - Unknown
+level: critical

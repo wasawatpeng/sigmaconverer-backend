@@ -1,0 +1,20 @@
+title: Test
+status: experimental
+description: 'Test'
+date: 2023-02-28
+references:
+    - Internal Research
+author: Wasawat
+logsource:
+    product: windows
+detection:
+    selection: 
+        CommandLine: '"C:\Windows\system32\mmc.exe" "C:\Windows\system32\eventvwr.msc" /s'
+        EventID: 1
+        ParentImage: 'C:\Windows\explorer.exe'
+        ParentCommandLine: 'C:\Windows\Explorer.EXE'
+        Image: 'C:\Windows\System32\mmc.exe'
+    condition: selection
+falsepositives:
+    - Unknown
+level: low

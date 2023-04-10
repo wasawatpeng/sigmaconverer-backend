@@ -1,0 +1,20 @@
+title: Test
+status: experimental
+description: 'Test'
+date: 2023-02-28
+references:
+    - Internal Research
+author: Wasawat
+logsource:
+    product: windows
+detection:
+    selection: 
+	EventID: 7045
+	ImagePath: 'C:	emp\wce\wce.exe -S'
+	ServiceName: 'WCESERVICE'
+	ServiceType: 'user mode service'
+	StartType: 'demand start'
+    condition: selection
+falsepositives:
+    - Unknown
+level: low
