@@ -3,4 +3,3 @@ Flask==2.2.3
 mixins==0.1.4
 sigma==0.0.1
 sigmatools==0.22.1
-base==1.0.4
